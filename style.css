@@ -130,7 +130,7 @@ a {
   line-height: 17px;
 }
 
-@media only screen and (max-width: 638.99px) {
+@media only screen and (max-width: 640px) {
   .app .wrapper {
     width: 100%;
     padding: 24px 16px;
@@ -168,7 +168,7 @@ a {
     width: 100%;
   }
 }
-@media (min-width: 640px) and (max-width: 1068px) {
+@media (min-width: 641px) and (max-width: 1068px) {
   .app {
     width: 100%;
   }
