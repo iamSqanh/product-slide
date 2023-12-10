@@ -61,37 +61,52 @@ a {
   line-height: 43px;
   letter-spacing: -0.35px;
 }
-.app .wrapper .product .product--wrap .product--list {
-  gap: 25px;
+.app .wrapper .product .product--wrap .container--wrap {
   position: relative;
-  display: flex;
-  gap: 25px;
+  overflow: hidden;
+  width: 93%;
 }
-.app .wrapper .product .product--wrap .product--list .product--arrow {
+.app .wrapper .product .product--wrap .container--wrap .product--arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   transition: transform 0.3s ease;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
-.app .wrapper .product .product--wrap .product--list .product--arrow-right {
-  right: -50px;
+.app .wrapper .product .product--wrap .container--wrap .product--arrow-right {
+  right: 4px;
 }
-.app .wrapper .product .product--wrap .product--list .product--arrow-right:hover {
+.app .wrapper .product .product--wrap .container--wrap .product--arrow-right:hover {
   transform: translate(4px, -50%);
 }
-.app .wrapper .product .product--wrap .product--list .product--arrow-left {
-  left: -54px;
+.app .wrapper .product .product--wrap .container--wrap .product--arrow-disable {
+  opacity: 0.5;
+  cursor: default;
 }
-.app .wrapper .product .product--wrap .product--list .product--arrow-left:hover {
+.app .wrapper .product .product--wrap .container--wrap .product--arrow-left {
+  left: 4px;
+}
+.app .wrapper .product .product--wrap .container--wrap .product--arrow-left:hover {
   transform: translate(-4px, -50%);
 }
+.app .wrapper .product .product--wrap .product--list {
+  gap: 25px;
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.5s ease-in-out;
+}
 .app .wrapper .product .product--wrap .product--card {
+  width: 395px;
   display: grid;
+  transition: transform 0.5s ease-in-out;
   gap: 14px;
+  flex-shrink: 0;
 }
 .app .wrapper .product .product--wrap .product--img {
-  width: 100%;
+  width: 395px;
 }
 .app .wrapper .product .product--wrap .product--img img {
   width: 100%;
@@ -133,15 +148,30 @@ a {
     text-align: center;
     font-size: 28px;
   }
+  .app .wrapper .product .product--wrap .container--wrap {
+    width: 100%;
+  }
+  .app .wrapper .product .product--wrap .container--wrap .product--arrow {
+    display: none;
+  }
   .app .wrapper .product .product--wrap .product--list {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
-  .app .wrapper .product .product--wrap .product--list .product--arrow {
-    display: none;
+  .app .wrapper .product .product--wrap .product--list .product--card {
+    width: 100%;
+  }
+  .app .wrapper .product .product--wrap .product--list .product--card .product--img {
+    width: 100%;
+  }
+  .app .wrapper .product .product--wrap .product--list .product--card .product--img img {
+    width: 100%;
   }
 }
 @media (min-width: 640px) and (max-width: 1068px) {
+  .app {
+    width: 100%;
+  }
   .app .wrapper {
     width: 100%;
     padding: 24px 16px;
@@ -154,17 +184,34 @@ a {
     margin-left: 0;
     text-align: center;
   }
+  .app .wrapper .product .product--wrap {
+    width: 100%;
+  }
   .app .wrapper .product .product--wrap h5 {
     margin-top: 12px;
     width: 100%;
     text-align: center;
     font-size: 28px;
   }
-  .app .wrapper .product .product--wrap .product--list {
+  .app .wrapper .product .product--wrap .container--wrap {
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .app .wrapper .product .product--wrap .container--wrap .product--arrow {
+    display: none;
+  }
+  .app .wrapper .product .product--wrap .container--wrap .product--list {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
-  .app .wrapper .product .product--wrap .product--list .product--arrow {
-    display: none;
+  .app .wrapper .product .product--wrap .container--wrap .product--list .product--card {
+    width: 100%;
+  }
+  .app .wrapper .product .product--wrap .container--wrap .product--list .product--card .product--img {
+    width: 100%;
+  }
+  .app .wrapper .product .product--wrap .container--wrap .product--list .product--card .product--img img {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

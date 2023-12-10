@@ -70,11 +70,10 @@ a {
                     letter-spacing: -0.35px;
                 }
 
-                .product--list {
-                    gap: 25px;
+                .container--wrap {
                     position: relative;
-                    display: flex;
-                    gap: 25px;
+                    overflow: hidden;
+                    width: 93%;
 
                     .product--arrow {
                         position: absolute;
@@ -82,19 +81,26 @@ a {
                         transform: translateY(-50%);
                         transition: transform 0.3s ease;
                         cursor: pointer;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
                     }
 
                     .product--arrow-right {
-                        right: -50px;
-
+                        right: 4px;
 
                         &:hover {
                             transform: translate(4px, -50%);
                         }
                     }
 
+                    .product--arrow-disable {
+                        opacity: 0.5;
+                        cursor: default;
+                    }
+
                     .product--arrow-left {
-                        left: -54px;
+                        left: 4px;
 
                         &:hover {
                             transform: translate(-4px, -50%);
@@ -102,13 +108,24 @@ a {
                     }
                 }
 
+                .product--list {
+                    gap: 25px;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    transition: transform 0.5s ease-in-out;
+                }
+
                 .product--card {
+                    width: 395px;
+                    // width: calc(100% / 3 - 12.5px);
                     display: grid;
+                    transition: transform 0.5s ease-in-out;
                     gap: 14px;
+                    flex-shrink: 0;
                 }
 
                 .product--img {
-                    width: 100%;
+                    width: 395px;
 
                     img {
                         width: 100%;
@@ -167,12 +184,29 @@ a {
                         font-size: 28px;
                     }
 
+                    .container--wrap {
+                        width: 100%;
+
+                        .product--arrow {
+                            display: none;
+                        }
+                    }
+
                     .product--list {
                         display: grid;
                         grid-template-columns: repeat(1, 1fr);
 
-                        .product--arrow {
-                            display: none;
+                        .product--card {
+                            width: 100%;
+
+                            .product--img {
+                                width: 100%;
+
+                                img {
+                                    width: 100%;
+
+                                }
+                            }
                         }
                     }
                 }
@@ -185,6 +219,8 @@ a {
 @media (min-width: 640px) and (max-width: 1068px) {
 
     .app {
+        width: 100%;
+
         .wrapper {
             width: 100%;
             padding: 24px 16px;
@@ -201,6 +237,8 @@ a {
                 }
 
                 .product--wrap {
+                    width: 100%;
+
                     h5 {
                         margin-top: 12px;
                         width: 100%;
@@ -208,14 +246,36 @@ a {
                         font-size: 28px;
                     }
 
-                    .product--list {
-                        display: grid;
-                        grid-template-columns: repeat(3, 1fr);
+                    .container--wrap {
+                        width: 100%;
+                        overflow-x: scroll;
 
                         .product--arrow {
                             display: none;
                         }
+
+                        .product--list {
+                            width: 100%;
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+
+
+                            .product--card {
+                                width: 100%;
+
+                                .product--img {
+                                    width: 100%;
+
+                                    img {
+                                        width: 100%;
+
+                                    }
+                                }
+                            }
+                        }
                     }
+
+
                 }
             }
         }
